@@ -18,13 +18,13 @@ jobs:
 
       - name: compile
         working-directory: backend
-        run: java -version
+        run: mvn -B package
 
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}/backend
+          ls -l ${{ github.workspace }}/backend/target
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      
+
       - name: Upload binaries to release
         id: upload
         uses: svenstaro/upload-release-action@v2
