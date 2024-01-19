@@ -16,6 +16,7 @@ jobs:
           cache-dependency-path: 'backend/pom.xml'
 
       - name: compile
+        working-directory: backend
         run: java -version
 
       - name: List files in the repository
